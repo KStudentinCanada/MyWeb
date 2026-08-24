@@ -1,0 +1,34 @@
+/* =========================================
+   MYWEB — VARIABLES
+========================================= */
+
+:root {
+
+    /* Brand Colors */
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --navy: #0f172a;
+    --cyan: #06b6d4;
+
+    /* Backgrounds */
+    --background: #ffffff;
+    --background-soft: #eff6ff;
+    --background-blue: #dbeafe;
+
+    /* Text */
+    --text: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-light: #cbd5e1;
+
+    /* Borders */
+    --border: #dbeafe;
+    --border-light: #e2e8f0;
+
+    /* Effects */
+    --shadow-soft:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+
+    --shadow-medium:
+        0 20px 40px rgba(15, 23, 42, 0.10);
+}

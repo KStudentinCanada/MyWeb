@@ -1,0 +1,80 @@
+/* =========================================
+   MYWEB — COMPONENTS
+========================================= */
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 0 25px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.primary-button {
+    color: #0f172a;
+
+    background: #ffffff;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-button {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    backdrop-filter: blur(8px);
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   TEXT LINKS
+========================================= */
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.text-link:hover {
+    color: var(--primary-dark);
+
+    transform: translateX(5px);
+}
