@@ -9,32 +9,37 @@
 
 @media (max-width: 900px) {
 
-    .hero h1 {
+    /* Hero */
+
+    .hero-name {
+        font-size: clamp(4.5rem, 10vw, 7rem);
         letter-spacing: -3px;
     }
 
-
-    .project-grid {
-        grid-template-columns: 1fr;
+    .hero-floating {
+        display: none;
     }
 
 
-    .project-card {
-        min-height: auto;
-    }
-
+    /* About */
 
     .about-content {
         grid-template-columns: 1fr;
-
         gap: 45px;
+    }
+
+
+    /* Projects */
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
 /* =========================================
-   MOBILE
+   MOBILE NAVIGATION
 ========================================= */
 
 @media (max-width: 650px) {
@@ -48,14 +53,99 @@
 
     .nav-container {
         min-height: 65px;
+
+        position: relative;
     }
 
-    .nav-links {
-        gap: 15px;
+
+    /* Hide desktop navigation */
+
+    .desktop-nav {
+        display: none;
     }
 
-    .nav-links a {
-        font-size: 0.8rem;
+
+    /* Show hamburger */
+
+    .mobile-menu-button {
+        display: flex;
+    }
+
+
+    /* Mobile dropdown */
+
+    .mobile-nav {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 15px 0;
+
+        background: rgba(15, 23, 42, 0.97);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+        backdrop-filter: blur(12px);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s ease;
+    }
+
+
+    .mobile-nav.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .mobile-nav a {
+        padding: 15px 25px;
+
+        color: #cbd5e1;
+
+        font-size: 0.95rem;
+        font-weight: 600;
+
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
+    }
+
+
+    .mobile-nav a:hover {
+        color: #ffffff;
+
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+
+    /* Hamburger animation */
+
+    .mobile-menu-button.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-button.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-button.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
 
@@ -109,6 +199,32 @@
         flex-direction: column;
 
         text-align: center;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+    .nav-links {
+        gap: 9px;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    .hero-content {
+        padding-top: 65px;
+    }
+
+    .hero-name {
+        font-size: clamp(3.2rem, 18vw, 4.5rem);
+        letter-spacing: -2px;
     }
 
 }
