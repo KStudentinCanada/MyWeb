@@ -14,9 +14,12 @@
     ===================================== */
 
     .hero-name {
-        font-size: clamp(4.5rem, 10vw, 7rem);
+        font-size:
+            clamp(4.5rem, 10vw, 7rem);
+
         letter-spacing: -3px;
     }
+
 
     .hero-floating {
         display: none;
@@ -29,6 +32,7 @@
 
     .about-content {
         grid-template-columns: 1fr;
+
         gap: 45px;
     }
 
@@ -40,6 +44,13 @@
     .project-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    .project-card {
+        min-height: auto;
     }
 
 }
@@ -66,6 +77,7 @@
 
     .nav-container {
         min-height: 65px;
+
         position: relative;
     }
 
@@ -96,24 +108,38 @@
         right: 0;
 
         display: flex;
+
         flex-direction: column;
 
         padding: 15px 0;
 
-        background: rgba(15, 23, 42, 0.97);
+        background:
+            rgba(15, 23, 42, 0.97);
 
         border-top:
-            1px solid rgba(255, 255, 255, 0.08);
+            1px solid rgba(
+                255,
+                255,
+                255,
+                0.08
+            );
 
         border-bottom:
-            1px solid rgba(255, 255, 255, 0.1);
+            1px solid rgba(
+                255,
+                255,
+                255,
+                0.1
+            );
 
         backdrop-filter: blur(12px);
 
         opacity: 0;
+
         visibility: hidden;
 
-        transform: translateY(-10px);
+        transform:
+            translateY(-10px);
 
         transition:
             opacity 0.2s ease,
@@ -129,7 +155,8 @@
 
         visibility: visible;
 
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
 
@@ -139,6 +166,7 @@
         color: #cbd5e1;
 
         font-size: 0.95rem;
+
         font-weight: 600;
 
         transition:
@@ -150,7 +178,13 @@
     .mobile-nav a:hover {
         color: #ffffff;
 
-        background: rgba(255, 255, 255, 0.06);
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.06
+            );
     }
 
 
@@ -188,7 +222,8 @@
     ===================================== */
 
     .hero {
-        min-height: calc(100vh - 65px);
+        min-height:
+            calc(100vh - 65px);
 
         align-items: flex-start;
     }
@@ -207,7 +242,11 @@
 
     .hero h1 {
         font-size:
-            clamp(3.5rem, 18vw, 5rem);
+            clamp(
+                3.5rem,
+                18vw,
+                5rem
+            );
 
         letter-spacing: -3px;
     }
@@ -218,19 +257,67 @@
     }
 
 
-    .hero-goal {
+    /* Correct hero goal card class */
+
+    .hero-goal-card {
         padding: 15px;
     }
 
 
-    .hero-goal-text {
+    .hero-goal-card p {
         font-size: 0.95rem;
     }
 
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
+    /* =====================================
+       HERO REVEAL ANIMATIONS
+    ===================================== */
+
+    .hero-reveal {
+        transition-duration:
+            0.65s;
+    }
+
+
+    /* =====================================
+       PROJECTS
+    ===================================== */
+
+    .project-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .project-card {
+        min-height: auto;
+
+        padding: 24px;
+    }
+
+
+    .project-card-top {
+        margin-bottom: 35px;
+    }
+
+
+    .project-card h3 {
+        font-size: 1.6rem;
+    }
+
+
+    /* =====================================
+       ABOUT
+    ===================================== */
+
+    .about-content {
+        gap: 35px;
+    }
+
+
+    .about-highlight {
+        padding: 18px;
     }
 
 
@@ -240,6 +327,13 @@
 
     .interest-grid {
         grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .interest-card {
+        padding: 24px;
     }
 
 
@@ -282,9 +376,58 @@
 
     .hero-name {
         font-size:
-            clamp(3.2rem, 18vw, 4.5rem);
+            clamp(
+                3.2rem,
+                18vw,
+                4.5rem
+            );
 
         letter-spacing: -2px;
+    }
+
+
+    .hero-role {
+        font-size: 1.05rem;
+
+        gap: 7px;
+    }
+
+
+    .hero-description {
+        font-size: 0.95rem;
+
+        line-height: 1.65;
+    }
+
+
+    .hero-goal-card {
+        padding: 16px;
+    }
+
+
+    .hero-goal-card h2 {
+        font-size: 1.25rem;
+    }
+
+
+    /* =====================================
+       PROJECTS
+    ===================================== */
+
+    .project-card {
+        padding: 20px;
+    }
+
+
+    .project-card-top {
+        margin-bottom: 30px;
+    }
+
+
+    .project-category {
+        font-size: 0.6rem;
+
+        letter-spacing: 1px;
     }
 
 
@@ -294,6 +437,47 @@
 
     .nav-container {
         min-height: 65px;
+    }
+
+
+    /* =====================================
+       SCROLL REVEAL
+    ===================================== */
+
+    .reveal {
+        transform:
+            translateY(25px);
+    }
+
+
+    .reveal.reveal-left,
+    .reveal.reveal-right {
+        transform:
+            translateY(25px);
+    }
+
+
+    .reveal.reveal-scale {
+        transform:
+            scale(0.97);
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mobile-nav {
+        transition: none;
+    }
+
+
+    .mobile-menu-button span {
+        transition: none;
     }
 
 }

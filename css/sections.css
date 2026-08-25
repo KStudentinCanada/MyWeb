@@ -22,6 +22,7 @@
 .nav-container {
     width: min(1200px, 92%);
     min-height: 72px;
+
     margin: 0 auto;
 
     display: flex;
@@ -46,6 +47,7 @@
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 30px;
 }
 
@@ -68,6 +70,7 @@
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -7px;
 
@@ -90,6 +93,7 @@
 
 .hero {
     position: relative;
+
     min-height: calc(100vh - 72px);
 
     display: flex;
@@ -126,6 +130,7 @@
 
 .hero-background {
     position: absolute;
+
     inset: 0;
 
     overflow: hidden;
@@ -167,6 +172,7 @@
 
 .hero-grid {
     position: absolute;
+
     inset: 0;
 
     opacity: 0.12;
@@ -211,13 +217,14 @@
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     width: min(1100px, 90%);
 
     margin: 0 auto;
 
-    padding: 80px 0;
+    padding: 75px 0 85px;
 }
 
 
@@ -226,7 +233,7 @@
 ========================================= */
 
 .hero-intro {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .hero-status {
@@ -236,7 +243,8 @@
 
     gap: 9px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
+
     padding: 7px 12px;
 
     border: 1px solid rgba(103, 232, 249, 0.25);
@@ -258,6 +266,8 @@
 .hero-status-dot {
     width: 7px;
     height: 7px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
@@ -299,11 +309,11 @@
 ========================================= */
 
 .hero-name {
-    margin: 0 0 18px;
+    margin: 0 0 20px;
 
-    font-size: clamp(4.5rem, 11vw, 9rem);
+    font-size: clamp(4.5rem, 10.5vw, 8.5rem);
 
-    line-height: 0.9;
+    line-height: 0.88;
 
     letter-spacing: -6px;
 
@@ -331,7 +341,7 @@
 
     gap: 12px;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     font-size: clamp(1.25rem, 2.5vw, 1.7rem);
 
@@ -354,9 +364,9 @@
 .hero-description {
     max-width: 680px;
 
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 
-    font-size: 1.12rem;
+    font-size: 1.1rem;
 
     line-height: 1.8;
 
@@ -380,7 +390,7 @@
 .hero-goal-card {
     max-width: 680px;
 
-    margin-bottom: 35px;
+    margin-bottom: 32px;
 
     padding: 22px 25px;
 
@@ -401,6 +411,20 @@
 
     box-shadow:
         0 15px 45px rgba(15, 23, 42, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hero-goal-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(103, 232, 249, 0.35);
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.25);
 }
 
 .hero-goal-top {
@@ -466,7 +490,7 @@
 
     gap: 14px;
 
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .hero-buttons .button {
@@ -640,7 +664,7 @@
     }
 
     .hero-content {
-        padding: 70px 0;
+        padding: 65px 0 75px;
     }
 
 }
@@ -654,37 +678,59 @@
 
     .hero {
         min-height: calc(100vh - 65px);
+
+        align-items: flex-start;
     }
 
     .hero-content {
-        padding: 60px 0;
+        padding: 28px 0 60px;
+    }
+
+    .hero-intro {
+        margin-bottom: 17px;
     }
 
     .hero-status {
-        font-size: 0.6rem;
+        margin-bottom: 14px;
+
+        font-size: 0.58rem;
+    }
+
+    .hero-greeting {
+        font-size: 1rem;
     }
 
     .hero-name {
+        margin-bottom: 17px;
+
         font-size: clamp(3.5rem, 18vw, 5rem);
 
         letter-spacing: -3px;
+
+        line-height: 0.9;
     }
 
     .hero-role {
         flex-wrap: wrap;
 
-        gap: 8px;
+        gap: 7px;
 
-        font-size: 1.15rem;
+        margin-bottom: 24px;
+
+        font-size: 1.1rem;
     }
 
     .hero-description {
+        margin-bottom: 26px;
+
         font-size: 1rem;
 
         line-height: 1.7;
     }
 
     .hero-goal-card {
+        margin-bottom: 28px;
+
         padding: 18px;
     }
 
@@ -692,12 +738,18 @@
         font-size: 1.35rem;
     }
 
+    .hero-goal-card p {
+        font-size: 0.9rem;
+    }
+
     .hero-buttons {
         flex-direction: column;
 
         align-items: stretch;
 
-        margin-bottom: 35px;
+        gap: 10px;
+
+        margin-bottom: 30px;
     }
 
     .hero-buttons .button {
@@ -736,6 +788,7 @@
 
 .about-section p:not(.section-label) {
     max-width: 750px;
+
     margin-bottom: 20px;
 
     font-size: 1.08rem;
@@ -787,6 +840,7 @@
 
 .about-highlights {
     display: flex;
+
     flex-direction: column;
 
     gap: 18px;
@@ -861,11 +915,6 @@
     background: #ffffff;
 }
 
-
-/* =========================================
-   PROJECT GRID
-========================================= */
-
 .project-grid {
     display: grid;
 
@@ -877,16 +926,13 @@
     margin-top: 45px;
 }
 
-
-/* =========================================
-   PROJECT CARD
-========================================= */
-
 .project-card {
     min-height: 390px;
+
     padding: 28px;
 
     display: flex;
+
     flex-direction: column;
 
     border: 1px solid var(--border-light);
@@ -911,11 +957,6 @@
 
     box-shadow: var(--shadow-medium);
 }
-
-
-/* =========================================
-   PROJECT CARD — TOP
-========================================= */
 
 .project-card-top {
     display: flex;
@@ -946,11 +987,6 @@
     color: var(--primary);
 }
 
-
-/* =========================================
-   PROJECT CARD — CONTENT
-========================================= */
-
 .project-card-content {
     flex: 1;
 }
@@ -969,11 +1005,6 @@
 
     line-height: 1.7;
 }
-
-
-/* =========================================
-   PROJECT CARD — BOTTOM
-========================================= */
 
 .project-card-bottom {
     padding-top: 25px;
@@ -1016,11 +1047,6 @@
 .project-card-bottom > a:hover {
     color: var(--primary-dark);
 }
-
-
-/* =========================================
-   PROJECTS FOOTER
-========================================= */
 
 .projects-footer {
     margin-top: 35px;
@@ -1252,4 +1278,272 @@
 
 .social-links a:hover {
     color: var(--cyan);
+}
+
+/* =========================================
+   HERO — INTERACTION LAYER
+========================================= */
+
+
+/* =========================================
+   HERO ENTRANCE ANIMATION
+========================================= */
+
+.hero-reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+    transition-delay: var(--hero-delay);
+}
+
+.hero-loaded .hero-reveal {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   HERO CURSOR GLOW
+========================================= */
+
+.hero-cursor-glow {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(103, 232, 249, 0.16),
+            rgba(59, 130, 246, 0.08) 35%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    transition:
+        opacity 0.3s ease;
+
+    z-index: 1;
+}
+
+.hero-cursor-glow.visible {
+    opacity: 1;
+}
+
+
+/* =========================================
+   HERO FLOATING LABEL PARALLAX
+========================================= */
+
+.hero-floating {
+    transform:
+        translate3d(
+            var(--mouse-x, 0px),
+            var(--mouse-y, 0px),
+            0
+        );
+}
+
+
+/* =========================================
+   NAVIGATION — SCROLL STATE
+========================================= */
+
+.navbar {
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background:
+        rgba(15, 23, 42, 0.97);
+
+    border-bottom-color:
+        rgba(103, 232, 249, 0.16);
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.2);
+}
+
+
+/* =========================================
+   NAVIGATION — ACTIVE LINK
+========================================= */
+
+.nav-links a.active {
+    color: #ffffff;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   MOBILE NAV — ACTIVE LINK
+========================================= */
+
+.mobile-nav a.active {
+    color: #ffffff;
+
+    background:
+        rgba(103, 232, 249, 0.08);
+
+    border-left:
+        2px solid #67e8f9;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .hero-glow,
+    .hero-status-dot,
+    .hero-floating {
+        animation: none;
+    }
+
+}
+
+/* =========================================
+   SCROLL REVEAL SYSTEM
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.reveal-left {
+    transform: translateX(-45px);
+}
+
+.reveal.reveal-right {
+    transform: translateX(45px);
+}
+
+.reveal.reveal-scale {
+    transform: scale(0.92);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+
+/* =========================================
+   REVEAL STAGGERING
+========================================= */
+
+.reveal-stagger > .reveal:nth-child(1) {
+    --reveal-delay: 0ms;
+}
+
+.reveal-stagger > .reveal:nth-child(2) {
+    --reveal-delay: 100ms;
+}
+
+.reveal-stagger > .reveal:nth-child(3) {
+    --reveal-delay: 200ms;
+}
+
+.reveal-stagger > .reveal:nth-child(4) {
+    --reveal-delay: 300ms;
+}
+
+.reveal-stagger > .reveal:nth-child(5) {
+    --reveal-delay: 400ms;
+}
+
+
+/* =========================================
+   MOBILE REVEAL
+========================================= */
+
+@media (max-width: 650px) {
+
+    .reveal {
+        transform: translateY(30px);
+    }
+
+    .reveal.reveal-left,
+    .reveal.reveal-right {
+        transform: translateY(30px);
+    }
+
+    .reveal.reveal-scale {
+        transform: scale(0.96);
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal.reveal-left,
+    .reveal.reveal-right,
+    .reveal.reveal-scale {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
 }
