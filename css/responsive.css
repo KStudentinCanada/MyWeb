@@ -9,7 +9,9 @@
 
 @media (max-width: 900px) {
 
-    /* Hero */
+    /* =====================================
+       HERO
+    ===================================== */
 
     .hero-name {
         font-size: clamp(4.5rem, 10vw, 7rem);
@@ -21,7 +23,9 @@
     }
 
 
-    /* About */
+    /* =====================================
+       ABOUT
+    ===================================== */
 
     .about-content {
         grid-template-columns: 1fr;
@@ -29,31 +33,39 @@
     }
 
 
-    /* Projects */
+    /* =====================================
+       PROJECTS
+    ===================================== */
 
     .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
 /* =========================================
-   MOBILE NAVIGATION
+   MOBILE
 ========================================= */
 
 @media (max-width: 650px) {
+
+    /* =====================================
+       GENERAL
+    ===================================== */
 
     section {
         padding: 80px 0;
     }
 
 
-    /* Navigation */
+    /* =====================================
+       NAVIGATION
+    ===================================== */
 
     .nav-container {
         min-height: 65px;
-
         position: relative;
     }
 
@@ -72,7 +84,9 @@
     }
 
 
-    /* Mobile dropdown */
+    /* =====================================
+       MOBILE DROPDOWN
+    ===================================== */
 
     .mobile-nav {
         position: absolute;
@@ -88,7 +102,11 @@
 
         background: rgba(15, 23, 42, 0.97);
 
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.1);
 
         backdrop-filter: blur(12px);
 
@@ -101,6 +119,8 @@
             opacity 0.2s ease,
             transform 0.2s ease,
             visibility 0.2s ease;
+
+        z-index: 1001;
     }
 
 
@@ -134,44 +154,79 @@
     }
 
 
-    /* Hamburger animation */
+    /* =====================================
+       HAMBURGER ANIMATION
+    ===================================== */
 
-    .mobile-menu-button.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+    .mobile-menu-button.active
+    span:nth-child(1) {
+
+        transform:
+            translateY(7px)
+            rotate(45deg);
     }
 
-    .mobile-menu-button.active span:nth-child(2) {
+
+    .mobile-menu-button.active
+    span:nth-child(2) {
+
         opacity: 0;
     }
 
-    .mobile-menu-button.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+
+    .mobile-menu-button.active
+    span:nth-child(3) {
+
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
     }
 
 
-    /* Hero */
+    /* =====================================
+       HERO
+    ===================================== */
 
     .hero {
         min-height: calc(100vh - 65px);
+
+        align-items: flex-start;
     }
 
+
+    /*
+       Reduced top spacing so the hero
+       doesn't have a huge empty area
+       below the navigation.
+    */
+
+    .hero-content {
+        padding-top: 40px;
+    }
+
+
     .hero h1 {
-        font-size: clamp(3.5rem, 18vw, 5rem);
+        font-size:
+            clamp(3.5rem, 18vw, 5rem);
 
         letter-spacing: -3px;
     }
+
 
     .hero-description {
         font-size: 1rem;
     }
 
+
     .hero-goal {
         padding: 15px;
     }
 
+
     .hero-goal-text {
         font-size: 0.95rem;
     }
+
 
     .hero-buttons {
         flex-direction: column;
@@ -179,21 +234,27 @@
     }
 
 
-    /* Interests */
+    /* =====================================
+       INTERESTS
+    ===================================== */
 
     .interest-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /* Focus */
+    /* =====================================
+       FOCUS
+    ===================================== */
 
     .focus-items {
         grid-template-columns: 1fr;
     }
 
 
-    /* Footer */
+    /* =====================================
+       FOOTER
+    ===================================== */
 
     .footer-container {
         flex-direction: column;
@@ -210,21 +271,29 @@
 
 @media (max-width: 450px) {
 
-    .nav-links {
-        gap: 9px;
-    }
-
-    .nav-links a {
-        font-size: 0.7rem;
-    }
+    /* =====================================
+       HERO
+    ===================================== */
 
     .hero-content {
-        padding-top: 65px;
+        padding-top: 30px;
     }
 
+
     .hero-name {
-        font-size: clamp(3.2rem, 18vw, 4.5rem);
+        font-size:
+            clamp(3.2rem, 18vw, 4.5rem);
+
         letter-spacing: -2px;
+    }
+
+
+    /* =====================================
+       NAVIGATION
+    ===================================== */
+
+    .nav-container {
+        min-height: 65px;
     }
 
 }
