@@ -1,0 +1,1841 @@
+/* =========================================
+   MYWEB — INTEREST PAGES
+========================================= */
+
+
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+.project-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+}
+
+
+.project-nav-back {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.project-nav-back:hover {
+    color: var(--cyan);
+
+    transform: translateX(-4px);
+}
+
+
+
+/* =========================================
+   INTEREST HERO
+========================================= */
+
+.interest-page-hero {
+    position: relative;
+
+    min-height: 100vh;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07111f 0%,
+            #0b1b30 48%,
+            #102d4c 100%
+        );
+
+    color: white;
+}
+
+
+.interest-hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.interest-hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.4;
+
+    background-image:
+        linear-gradient(
+            rgba(56, 189, 248, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56, 189, 248, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 95%
+        );
+}
+
+
+.interest-hero-glow {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: 50%;
+    right: -180px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.28) 0%,
+            rgba(6, 182, 212, 0.14) 35%,
+            transparent 72%
+        );
+
+    filter: blur(12px);
+}
+
+
+.interest-hero-orbit {
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    top: 50%;
+    right: 4%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    animation:
+        interest-orbit-float
+        10s
+        ease-in-out
+        infinite;
+}
+
+
+.interest-orbit-ring {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.2);
+
+    border-radius: 50%;
+}
+
+
+.interest-orbit-ring-one {
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(15deg);
+}
+
+
+.interest-orbit-ring-two {
+    width: 72%;
+    height: 72%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-25deg);
+}
+
+
+.interest-orbit-ring-three {
+    width: 45%;
+    height: 45%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(40deg);
+}
+
+
+.interest-orbit-dot {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 25px
+        rgba(34, 211, 238, 0.75);
+}
+
+
+.interest-orbit-dot-one {
+    top: 9%;
+    left: 66%;
+}
+
+
+.interest-orbit-dot-two {
+    bottom: 20%;
+    left: 8%;
+
+    background: #60a5fa;
+}
+
+
+@keyframes interest-orbit-float {
+
+    0%,
+    100% {
+        transform:
+            translateY(-50%)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-50%)
+            rotate(3deg);
+    }
+
+}
+
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.interest-page-hero .section-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    /*
+       Reserve space for the scroll indicator
+       so the hero content never collides with it.
+    */
+    padding-top: 70px;
+    padding-bottom: 105px;
+
+    box-sizing: border-box;
+}
+
+
+.interest-hero-content {
+    width: min(100%, 850px);
+
+    margin: 0 auto;
+}
+
+
+.interest-page-number {
+    margin-bottom: 14px;
+
+    color: #60a5fa;
+
+    font-family: monospace;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.interest-page-label {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.interest-page-icon {
+    margin-bottom: 20px;
+
+    font-size: 3.6rem;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 10px 25px
+            rgba(34, 211, 238, 0.2)
+        );
+
+    animation:
+        interest-icon-float
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes interest-icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+.interest-hero-content h1 {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            8rem
+        );
+
+    font-weight: 800;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.065em;
+}
+
+
+.interest-hero-content h1 span {
+    color: #38bdf8;
+}
+
+
+.interest-hero-description {
+    max-width: 600px;
+
+    margin:
+        34px
+        auto
+        0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+}
+
+
+.interest-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 26px;
+}
+
+
+.interest-hero-meta span {
+    padding: 8px 13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.interest-hero-meta span:hover {
+    background:
+        rgba(56, 189, 248, 0.1);
+
+    border-color:
+        rgba(56, 189, 248, 0.4);
+
+    color: #ffffff;
+}
+
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.interest-scroll-indicator {
+    position: absolute;
+
+    bottom: 28px;
+    left: 50%;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    width: max-content;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+
+.interest-scroll-line {
+    position: relative;
+
+    width: 80px;
+    height: 1px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+.interest-scroll-line span {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 35%;
+    height: 100%;
+
+    background:
+        #38bdf8;
+
+    animation:
+        interest-scroll-line
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes interest-scroll-line {
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(200%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+
+}
+
+
+
+/* =========================================
+   GENERAL INTEREST SECTIONS
+========================================= */
+
+.interest-section {
+    position: relative;
+
+    padding:
+        140px
+        0;
+
+    overflow: hidden;
+
+    /*
+       01 — LIGHT
+       02 — DARK
+       03 — LIGHT
+       04 — DARK
+       05 — LIGHT
+
+       NOTE:
+       The hero is also a <section>, so the actual
+       content sections start at section:nth-of-type(2).
+    */
+
+    background:
+        #f8fafc;
+}
+
+
+/* =========================================
+   LIGHT / DARK RHYTHM
+========================================= */
+
+/*
+   Because .interest-page-hero is the first <section>,
+   the first content section is nth-of-type(2).
+
+   Therefore:
+
+   nth-of-type(2) → 01 LIGHT
+   nth-of-type(3) → 02 DARK
+   nth-of-type(4) → 03 LIGHT
+   nth-of-type(5) → 04 DARK
+   nth-of-type(6) → 05 LIGHT
+*/
+
+
+.interest-section:nth-of-type(odd) {
+    background:
+        linear-gradient(
+            135deg,
+            #07182d 0%,
+            #0b1f3a 55%,
+            #102d4c 100%
+        );
+}
+
+
+.interest-section:nth-of-type(even) {
+    background:
+        #f8fafc;
+}
+
+
+
+/* =========================================
+   DARK SECTION TEXT
+========================================= */
+
+.interest-section:nth-of-type(odd)
+.interest-section-heading h2,
+.interest-section:nth-of-type(odd)
+.interest-heading h2 {
+
+    color: #ffffff;
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-section-heading h2 span,
+.interest-section:nth-of-type(odd)
+.interest-heading h2 span {
+
+    color: #22d3ee;
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-section-label {
+
+    color: #22d3ee;
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-section-content p {
+
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-heading p {
+
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+
+
+/* =========================================
+   SECTION LAYOUT
+========================================= */
+
+.interest-section-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+.interest-section-heading {
+    min-width: 0;
+}
+
+
+.interest-section-label {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: var(--primary);
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+.interest-section-heading h2,
+.interest-heading h2 {
+    max-width: 100%;
+
+    margin: 0;
+
+    color: var(--navy);
+
+    font-size:
+        clamp(
+            2.7rem,
+            5vw,
+            5rem
+        );
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+    overflow-wrap: normal;
+}
+
+
+.interest-section-heading h2 span,
+.interest-heading h2 span {
+    color: var(--primary);
+}
+
+
+.interest-section-content {
+    min-width: 0;
+
+    max-width: 650px;
+}
+
+
+.interest-section-content p {
+    margin: 0 0 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+}
+
+
+
+/* =========================================
+   DARK SECTION LIST
+========================================= */
+
+.interest-section:nth-of-type(odd)
+.interest-learning-list {
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-learning-item {
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-learning-item strong {
+
+    color: #ffffff;
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-learning-item span {
+
+    color: #22d3ee;
+}
+
+
+
+/* =========================================
+   HIGHLIGHT
+========================================= */
+
+.interest-highlight {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 45px;
+
+    padding: 28px;
+
+    border-left:
+        3px solid
+        var(--primary);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        var(--shadow-soft);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.interest-highlight:hover {
+    transform: translateX(6px);
+
+    box-shadow:
+        var(--shadow-medium);
+}
+
+
+.interest-highlight span {
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.interest-highlight strong {
+    color: var(--navy);
+
+    font-size: 1.25rem;
+}
+
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.interest-heading {
+    max-width: 800px;
+
+    margin-bottom: 70px;
+}
+
+
+.interest-heading p {
+    max-width: 650px;
+
+    margin-top: 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================
+   EXPERIENCE GRID
+========================================= */
+
+.interest-experience-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.interest-experience-card {
+    position: relative;
+
+    min-height: 290px;
+
+    padding: 34px;
+
+    border:
+        1px solid
+        rgba(15, 23, 42, 0.08);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        var(--shadow-soft);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.interest-experience-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background:
+        var(--primary);
+
+    transition:
+        width 0.35s ease;
+}
+
+
+.interest-experience-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(37, 99, 235, 0.25);
+
+    box-shadow:
+        var(--shadow-medium);
+}
+
+
+.interest-experience-card:hover::after {
+    width: 100%;
+}
+
+
+.interest-card-number {
+    margin-bottom: 55px;
+
+    color: var(--primary);
+
+    font-family: monospace;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+
+.interest-card-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.interest-experience-card h3 {
+    margin: 0 0 15px;
+
+    color: var(--navy);
+
+    font-size: 1.65rem;
+
+    letter-spacing: -0.025em;
+}
+
+
+.interest-experience-card p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+}
+
+
+
+/* =========================================
+   DARK EXPERIENCE CARDS
+========================================= */
+
+.interest-section:nth-of-type(odd)
+.interest-experience-card {
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.22);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-experience-card:hover {
+
+    border-color:
+        rgba(34, 211, 238, 0.35);
+
+    background:
+        rgba(255, 255, 255, 0.065);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-card-number {
+
+    color: #22d3ee;
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-card-label {
+
+    color:
+        rgba(255, 255, 255, 0.48);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-experience-card h3 {
+
+    color: #ffffff;
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-experience-card p {
+
+    color:
+        rgba(255, 255, 255, 0.64);
+}
+
+
+.interest-section:nth-of-type(odd)
+.interest-experience-card::after {
+
+    background:
+        #22d3ee;
+}
+
+
+
+/* =========================================
+   LEARNING LIST
+========================================= */
+
+.interest-learning-list {
+    margin-top: 40px;
+
+    border-top:
+        1px solid
+        var(--border);
+}
+
+
+.interest-learning-item {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 23px 0;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    transition:
+        padding-left 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.interest-learning-item:hover {
+    padding-left: 10px;
+}
+
+
+.interest-learning-item span {
+    min-width: 28px;
+
+    color: var(--primary);
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+}
+
+
+.interest-learning-item strong {
+    color: var(--navy);
+
+    font-size: 1rem;
+}
+
+
+
+/* =========================================
+   DARK FUTURE SECTION
+========================================= */
+
+.interest-future {
+    background:
+        linear-gradient(
+            135deg,
+            #07182d 0%,
+            #0b1f3a 55%,
+            #102d4c 100%
+        ) !important;
+}
+
+
+.interest-future .interest-section-label {
+    color: #22d3ee;
+}
+
+
+.interest-future .interest-heading h2 {
+    color: #ffffff;
+}
+
+
+.interest-future .interest-heading h2 span {
+    color: #22d3ee;
+}
+
+
+.interest-future .interest-heading p {
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+
+
+/* =========================================
+   FUTURE CONTENT — PARAGRAPH
+========================================= */
+
+.interest-future-panel {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    box-sizing: border-box;
+}
+
+
+.interest-future-panel:hover {
+    transform: none;
+
+    border-color: transparent;
+
+    background: transparent;
+}
+
+
+.interest-future-number {
+    margin-bottom: 22px;
+
+    color: #22d3ee;
+
+    font-family: monospace;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+.interest-future-content {
+    min-width: 0;
+}
+
+
+.interest-future-content > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.interest-future-content h3 {
+    max-width: 800px;
+
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            3rem
+        );
+
+    line-height: 1.1;
+
+    letter-spacing: -0.03em;
+}
+
+
+.interest-future-content p {
+    max-width: 700px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.62);
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+}
+
+
+
+/* =========================================
+   MINDSET — 05 LIGHT
+========================================= */
+
+.interest-mindset {
+    padding:
+        170px
+        0;
+
+    background:
+        #f8fafc;
+}
+
+
+.interest-mindset-content {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.interest-mindset-content .interest-section-label {
+    text-align: center;
+}
+
+
+.interest-mindset-content h2 {
+    margin: 0;
+
+    color: var(--navy);
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            8rem
+        );
+
+    font-weight: 800;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.065em;
+
+    text-align: center;
+}
+
+
+.interest-mindset-content h2 span {
+    color: var(--primary);
+}
+
+
+.interest-mindset-content p {
+    max-width: 620px;
+
+    margin:
+        45px
+        auto
+        0;
+
+    color: var(--text-secondary);
+
+    font-size: 1.1rem;
+
+    line-height: 1.85;
+
+    text-align: center;
+}
+
+
+.interest-mindset-line {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+    margin-top: 60px;
+}
+
+
+.interest-mindset-line span {
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        var(--border);
+}
+
+
+.interest-mindset-line strong {
+    flex-shrink: 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.18em;
+
+    text-align: center;
+}
+
+
+
+/* =========================================
+   FOOTER / CONTINUE EXPLORING
+========================================= */
+
+.interest-footer {
+    position: relative;
+
+    padding:
+        105px
+        0
+        35px;
+
+    background:
+        #020817;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.interest-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: -250px;
+    right: -180px;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.18),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.interest-next {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.interest-next > span {
+    margin-bottom: 18px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.interest-next-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding:
+        25px
+        0;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        padding 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.interest-next-link:hover {
+    padding-left: 12px;
+
+    color: #38bdf8;
+
+    border-color:
+        rgba(56, 189, 248, 0.35);
+}
+
+
+.interest-next-link strong {
+    font-size:
+        clamp(
+            1.7rem,
+            4vw,
+            3.2rem
+        );
+
+    letter-spacing: -0.04em;
+}
+
+
+.interest-next-link span {
+    color: #38bdf8;
+
+    font-family: monospace;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+.interest-footer-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 85px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+
+.interest-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-top: 25px;
+}
+
+
+.interest-footer-bottom p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 0.75rem;
+}
+
+
+.interest-footer-bottom a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.interest-footer-bottom a:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+.interest-footer-bottom a span {
+    color: #38bdf8;
+}
+
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .interest-page-hero .section-container {
+        padding-top: 80px;
+        padding-bottom: 110px;
+    }
+
+
+    .interest-hero-orbit {
+        width: 500px;
+        height: 500px;
+
+        right: -100px;
+
+        opacity: 0.65;
+    }
+
+
+    .interest-section {
+        padding:
+            110px
+            0;
+    }
+
+
+    .interest-section-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 55px;
+    }
+
+
+    .interest-experience-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .interest-future-panel {
+        max-width: 100%;
+    }
+
+}
+
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .project-nav-back {
+        font-size: 0.75rem;
+    }
+
+
+    .interest-page-hero {
+        min-height: 100svh;
+        height: auto;
+
+        padding:
+            110px
+            0
+            100px;
+    }
+
+
+    .interest-page-hero .section-container {
+        align-items: flex-start;
+
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+
+
+    .interest-hero-content {
+        width: 100%;
+    }
+
+
+    .interest-page-icon {
+        font-size: 3rem;
+    }
+
+
+    .interest-hero-content h1 {
+        font-size:
+            clamp(
+                3.4rem,
+                16vw,
+                5rem
+            );
+
+        line-height: 0.92;
+    }
+
+
+    .interest-hero-description {
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+
+    .interest-hero-meta {
+        gap: 7px;
+    }
+
+
+    .interest-hero-meta span {
+        padding: 7px 10px;
+
+        font-size: 0.6rem;
+    }
+
+
+    .interest-hero-orbit {
+        width: 360px;
+        height: 360px;
+
+        right: -150px;
+
+        opacity: 0.4;
+    }
+
+
+    .interest-hero-glow {
+        width: 450px;
+        height: 450px;
+
+        right: -220px;
+    }
+
+
+    .interest-scroll-indicator {
+        bottom: 22px;
+
+        gap: 10px;
+
+        font-size: 0.55rem;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    .interest-scroll-line {
+        width: 55px;
+    }
+
+
+    .interest-section {
+        padding:
+            85px
+            0;
+    }
+
+
+    .interest-section-grid {
+        gap: 45px;
+    }
+
+
+    .interest-section-heading h2,
+    .interest-heading h2 {
+        font-size:
+            clamp(
+                2.5rem,
+                12vw,
+                4rem
+            );
+
+        line-height: 1;
+    }
+
+
+    .interest-section-content p {
+        font-size: 0.95rem;
+
+        line-height: 1.8;
+    }
+
+
+    .interest-experience-card {
+        min-height: auto;
+
+        padding: 28px;
+    }
+
+
+    .interest-card-number {
+        margin-bottom: 40px;
+    }
+
+
+    .interest-future-panel {
+        max-width: 100%;
+    }
+
+
+    .interest-future-content h3 {
+        font-size: 1.7rem;
+    }
+
+
+    .interest-mindset {
+        padding:
+            100px
+            0;
+    }
+
+
+    .interest-mindset-content h2 {
+        font-size:
+            clamp(
+                3.5rem,
+                16vw,
+                6rem
+            );
+    }
+
+
+    .interest-mindset-content p {
+        margin-top: 35px;
+
+        font-size: 1rem;
+    }
+
+
+    .interest-mindset-line {
+        margin-top: 45px;
+    }
+
+
+    .interest-footer {
+        padding:
+            75px
+            0
+            30px;
+    }
+
+
+    .interest-next-link strong {
+        font-size: 1.5rem;
+    }
+
+
+    .interest-next-link span {
+        font-size: 0.7rem;
+    }
+
+
+    .interest-footer-divider {
+        margin-top: 65px;
+    }
+
+
+    .interest-footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
+
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .interest-hero-orbit,
+    .interest-page-icon,
+    .interest-scroll-line span {
+
+        animation: none;
+
+    }
+
+
+    .interest-experience-card,
+    .interest-highlight,
+    .interest-next-link,
+    .interest-learning-item,
+    .interest-future-panel {
+
+        transition: none;
+
+    }
+
+}

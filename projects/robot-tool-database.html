@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Robot Tool Database — project page coming soon."
+    >
+
+    <title>
+        Robot Tool Database | Seungyun Lim
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/project-pages.css"
+    >
+
+    <style>
+
+        .coming-soon-page {
+
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 35%
+                ),
+                #ffffff;
+
+            text-align: center;
+
+        }
+
+
+        .coming-soon-content {
+
+            max-width: 700px;
+
+        }
+
+
+        .coming-soon-label {
+
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            font-size: 0.7rem;
+
+            font-weight: 800;
+
+            letter-spacing: 2.5px;
+
+            color: var(--cyan);
+
+        }
+
+
+        .coming-soon-content h1 {
+
+            margin: 0 0 25px;
+
+            font-size:
+                clamp(
+                    3.5rem,
+                    9vw,
+                    6.5rem
+                );
+
+            line-height: 0.9;
+
+            letter-spacing: -5px;
+
+            color: var(--navy);
+
+        }
+
+
+        .coming-soon-content h1 span {
+
+            color: var(--cyan);
+
+        }
+
+
+        .coming-soon-content p {
+
+            max-width: 550px;
+
+            margin: 0 auto 35px;
+
+            font-size: 1.05rem;
+
+            line-height: 1.8;
+
+            color: var(--text-secondary);
+
+        }
+
+
+        .coming-soon-project {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 999px;
+
+            background: var(--background-soft);
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            color: var(--navy);
+
+        }
+
+
+        .coming-soon-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            box-shadow:
+                0 0 12px
+                rgba(6, 182, 212, 0.5);
+
+            animation:
+                pulse 1.8s ease-in-out infinite;
+
+        }
+
+
+        .coming-soon-back {
+
+            display: inline-block;
+
+            margin-top: 40px;
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            color: var(--text-secondary);
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+
+        .coming-soon-back:hover {
+
+            color: var(--cyan);
+
+            transform:
+                translateX(-4px);
+
+        }
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+
+                transform: scale(1);
+
+                opacity: 0.6;
+
+            }
+
+            50% {
+
+                transform: scale(1.5);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .coming-soon-page {
+
+                min-height:
+                    calc(100vh - 65px);
+
+                padding:
+                    80px 20px;
+
+            }
+
+
+            .coming-soon-content h1 {
+
+                letter-spacing: -3px;
+
+            }
+
+
+            .coming-soon-content p {
+
+                font-size: 0.95rem;
+
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .coming-soon-dot {
+
+                animation: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <header class="navbar project-navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="../index.html"
+                class="logo"
+            >
+                Seungyun Lim
+            </a>
+
+
+            <a
+                href="../index.html"
+                class="project-nav-back"
+            >
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         COMING SOON
+    ========================================== -->
+
+    <main>
+
+        <section class="coming-soon-page">
+
+            <div class="coming-soon-content">
+
+                <span class="coming-soon-label">
+                    PROJECT PAGE
+                </span>
+
+
+                <h1>
+                    Coming
+                    <br>
+                    <span>soon.</span>
+                </h1>
+
+
+                <p>
+                    I'm still putting together the full story
+                    behind the Robot Tool Database. Check back
+                    soon to explore the project, how it works,
+                    and what I learned while building it.
+                </p>
+
+
+                <div class="coming-soon-project">
+
+                    <span class="coming-soon-dot"></span>
+
+                    Robot Tool Database
+
+                </div>
+
+
+                <br>
+
+
+                <a
+                    href="../index.html"
+                    class="coming-soon-back"
+                >
+                    ← Return to home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

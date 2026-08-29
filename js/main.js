@@ -548,3 +548,38 @@ if (prefersReducedMotion) {
     });
 
 }
+
+/* =========================================
+   INTEREST CARD NAVIGATION
+========================================= */
+
+const interestCards = document.querySelectorAll(
+    ".interest-card[data-link]"
+);
+
+
+interestCards.forEach((card) => {
+
+    card.style.cursor = "pointer";
+
+
+    card.addEventListener(
+        "click",
+        () => {
+
+            const link =
+                card.dataset.link;
+
+
+            if (!link) {
+                return;
+            }
+
+
+            window.location.href =
+                link;
+
+        }
+    );
+
+});
