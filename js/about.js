@@ -7,102 +7,178 @@
    SCROLL REVEAL
 ========================================= */
 
-const revealElements = document.querySelectorAll(
-    ".reveal"
-);
+const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-        entries.forEach((entry) => {
+            entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                entry.target.classList.add(
-                    "is-visible"
-                );
+                    entry.target.classList.add(
+                        "is-visible"
+                    );
 
-                revealObserver.unobserve(
-                    entry.target
-                );
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
-            }
+                }
 
-        });
+            });
 
-    },
-    {
-        threshold: 0.12
-    }
-);
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
 
 revealElements.forEach((element) => {
 
-    revealObserver.observe(
-        element
-    );
+    revealObserver.observe(element);
 
 });
+
 
 
 /* =========================================
    TIMELINE ACTIVE STATE
 ========================================= */
 
-const timelineItems = document.querySelectorAll(
-    ".about-timeline-item"
-);
+const timelineItems =
+    document.querySelectorAll(
+        ".about-timeline-item"
+    );
 
 
-const timelineObserver = new IntersectionObserver(
-    (entries) => {
+const timelineObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-        entries.forEach((entry) => {
+            entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                timelineItems.forEach((item) => {
+                    timelineItems.forEach((item) => {
 
-                    item.classList.remove(
+                        item.classList.remove(
+                            "timeline-active"
+                        );
+
+                    });
+
+
+                    entry.target.classList.add(
                         "timeline-active"
                     );
 
-                });
+                }
 
+            });
 
-                entry.target.classList.add(
-                    "timeline-active"
-                );
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.55
-    }
-);
+        },
+        {
+            threshold: 0.55
+        }
+    );
 
 
 timelineItems.forEach((item) => {
 
-    timelineObserver.observe(
-        item
-    );
+    timelineObserver.observe(item);
 
 });
 
 
+
 /* =========================================
-   INTEREST CARD TILT
+   TIMELINE SCROLL PROGRESS
 ========================================= */
 
-const interestCards = document.querySelectorAll(
-    ".about-interest-card"
+const journeySection =
+    document.querySelector(
+        ".about-journey-section"
+    );
+
+
+const progressFill =
+    document.querySelector(
+        ".timeline-progress-fill"
+    );
+
+
+function updateTimelineProgress() {
+
+    if (
+        !journeySection ||
+        !progressFill
+    ) {
+        return;
+    }
+
+
+    const rect =
+        journeySection.getBoundingClientRect();
+
+
+    const viewportHeight =
+        window.innerHeight;
+
+
+    const totalDistance =
+        rect.height -
+        viewportHeight;
+
+
+    if (totalDistance <= 0) {
+
+        return;
+
+    }
+
+
+    const progress =
+        Math.min(
+            Math.max(
+                -rect.top / totalDistance,
+                0
+            ),
+            1
+        );
+
+
+    progressFill.style.height =
+        `${progress * 100}%`;
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateTimelineProgress,
+    {
+        passive: true
+    }
 );
+
+
+updateTimelineProgress();
+
+
+
+/* =========================================
+   INTEREST CARD 3D TILT
+========================================= */
+
+const interestCards =
+    document.querySelectorAll(
+        ".about-interest-card"
+    );
 
 
 interestCards.forEach((card) => {
@@ -145,10 +221,32 @@ interestCards.forEach((card) => {
                 3;
 
 
+            const mouseX =
+                (x / rect.width) *
+                100;
+
+
+            const mouseY =
+                (y / rect.height) *
+                100;
+
+
             card.style.transform =
                 `translateY(-8px)
                  rotateX(${rotateX}deg)
                  rotateY(${rotateY}deg)`;
+
+
+            card.style.setProperty(
+                "--mouse-x",
+                `${mouseX}%`
+            );
+
+
+            card.style.setProperty(
+                "--mouse-y",
+                `${mouseY}%`
+            );
 
         }
     );
@@ -161,10 +259,23 @@ interestCards.forEach((card) => {
             card.style.transform =
                 "";
 
+
+            card.style.setProperty(
+                "--mouse-x",
+                "50%"
+            );
+
+
+            card.style.setProperty(
+                "--mouse-y",
+                "50%"
+            );
+
         }
     );
 
 });
+
 
 
 /* =========================================
@@ -192,6 +303,12 @@ const thinkingDescription =
 const thinkingNumber =
     document.querySelector(
         ".thinking-display-number"
+    );
+
+
+const thinkingDisplay =
+    document.querySelector(
+        ".thinking-display"
     );
 
 
@@ -255,40 +372,58 @@ const thinkingData = {
 };
 
 
-thinkingSteps.forEach((step) => {
+function updateThinkingDisplay(
+    key
+) {
 
-    step.addEventListener(
-        "click",
-        () => {
-
-            const key =
-                step.dataset.thinking;
+    const data =
+        thinkingData[key];
 
 
-            const data =
-                thinkingData[key];
+    if (!data) {
+
+        return;
+
+    }
 
 
-            if (!data) {
-                return;
-            }
+    thinkingSteps.forEach(
+        (item) => {
 
-
-            thinkingSteps.forEach(
-                (item) => {
-
-                    item.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-
-            step.classList.add(
+            item.classList.remove(
                 "active"
             );
 
+        }
+    );
+
+
+    const activeStep =
+        document.querySelector(
+            `[data-thinking="${key}"]`
+        );
+
+
+    if (activeStep) {
+
+        activeStep.classList.add(
+            "active"
+        );
+
+    }
+
+
+    if (thinkingDisplay) {
+
+        thinkingDisplay.classList.add(
+            "thinking-changing"
+        );
+
+    }
+
+
+    setTimeout(
+        () => {
 
             thinkingNumber.textContent =
                 data.number;
@@ -301,14 +436,45 @@ thinkingSteps.forEach((step) => {
             thinkingDescription.textContent =
                 data.description;
 
+
+            if (thinkingDisplay) {
+
+                thinkingDisplay.classList.remove(
+                    "thinking-changing"
+                );
+
+            }
+
+        },
+        150
+    );
+
+}
+
+
+thinkingSteps.forEach((step) => {
+
+    step.addEventListener(
+        "click",
+        () => {
+
+            const key =
+                step.dataset.thinking;
+
+
+            updateThinkingDisplay(
+                key
+            );
+
         }
     );
 
 });
 
 
+
 /* =========================================
-   HERO MOUSE PARALLAX
+   HERO MOUSE EFFECT
 ========================================= */
 
 const hero =
@@ -323,7 +489,20 @@ const orbit =
     );
 
 
-if (hero && orbit) {
+const heroGlow =
+    document.querySelector(
+        ".hero-mouse-glow"
+    );
+
+
+if (
+    hero &&
+    orbit &&
+    heroGlow &&
+    window.matchMedia(
+        "(hover: hover)"
+    ).matches
+) {
 
     hero.addEventListener(
         "mousemove",
@@ -344,13 +523,15 @@ if (hero && orbit) {
 
 
             const moveX =
-                ((x / rect.width) - 0.5)
-                * 20;
+                ((x / rect.width) -
+                    0.5) *
+                25;
 
 
             const moveY =
-                ((y / rect.height) - 0.5)
-                * 20;
+                ((y / rect.height) -
+                    0.5) *
+                25;
 
 
             orbit.style.transform =
@@ -358,6 +539,14 @@ if (hero && orbit) {
                     calc(-50% + ${moveX}px),
                     calc(-50% + ${moveY}px)
                 )`;
+
+
+            heroGlow.style.left =
+                `${x}px`;
+
+
+            heroGlow.style.top =
+                `${y}px`;
 
         }
     );
@@ -368,12 +557,86 @@ if (hero && orbit) {
         () => {
 
             orbit.style.transform =
-                "translate(-50%, -50%)";
+                "translateY(-50%)";
+
+
+            heroGlow.style.left =
+                "50%";
+
+
+            heroGlow.style.top =
+                "50%";
 
         }
     );
 
 }
+
+
+
+/* =========================================
+   FOCUS CARD POINTER EFFECT
+========================================= */
+
+const focusCards =
+    document.querySelectorAll(
+        ".focus-card"
+    );
+
+
+focusCards.forEach((card) => {
+
+    card.addEventListener(
+        "mousemove",
+        (event) => {
+
+            const rect =
+                card.getBoundingClientRect();
+
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const rotateY =
+                ((x / rect.width) -
+                    0.5) *
+                3;
+
+
+            const rotateX =
+                ((y / rect.height) -
+                    0.5) *
+                -3;
+
+
+            card.style.transform =
+                `translateY(-7px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.transform =
+                "";
+
+        }
+    );
+
+});
+
 
 
 /* =========================================
@@ -398,7 +661,9 @@ document.querySelectorAll(
                 !targetId ||
                 targetId === "#"
             ) {
+
                 return;
+
             }
 
 
@@ -409,7 +674,9 @@ document.querySelectorAll(
 
 
             if (!target) {
+
                 return;
+
             }
 
 
@@ -417,8 +684,13 @@ document.querySelectorAll(
 
 
             target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+
+                behavior:
+                    "smooth",
+
+                block:
+                    "start"
+
             });
 
         }
