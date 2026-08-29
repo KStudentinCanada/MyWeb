@@ -127,3 +127,109 @@
 .mobile-nav {
     display: none;
 }
+
+/* =========================================
+   SCROLL REVEAL SYSTEM
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.reveal-left {
+    transform: translateX(-45px);
+}
+
+.reveal.reveal-right {
+    transform: translateX(45px);
+}
+
+.reveal.reveal-scale {
+    transform: scale(0.92);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+
+/* =========================================
+   REVEAL STAGGERING
+========================================= */
+
+.reveal-stagger > .reveal:nth-child(1) {
+    --reveal-delay: 0ms;
+}
+
+.reveal-stagger > .reveal:nth-child(2) {
+    --reveal-delay: 100ms;
+}
+
+.reveal-stagger > .reveal:nth-child(3) {
+    --reveal-delay: 200ms;
+}
+
+.reveal-stagger > .reveal:nth-child(4) {
+    --reveal-delay: 300ms;
+}
+
+.reveal-stagger > .reveal:nth-child(5) {
+    --reveal-delay: 400ms;
+}
+
+
+/* =========================================
+   MOBILE REVEAL
+========================================= */
+
+@media (max-width: 650px) {
+
+    .reveal {
+        transform: translateY(30px);
+    }
+
+    .reveal.reveal-left,
+    .reveal.reveal-right {
+        transform: translateY(30px);
+    }
+
+    .reveal.reveal-scale {
+        transform: scale(0.96);
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal.reveal-left,
+    .reveal.reveal-right,
+    .reveal.reveal-scale {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}

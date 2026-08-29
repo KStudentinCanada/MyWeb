@@ -1,0 +1,461 @@
+/* =========================================
+   JOURNEY
+========================================= */
+
+.journey-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(34, 211, 238, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(59, 130, 246, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            var(--navy),
+            #172554 55%,
+            #0f172a
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   JOURNEY HEADER
+========================================= */
+
+.journey-header {
+
+    max-width: 800px;
+
+    margin-bottom: 70px;
+}
+
+.journey-section .section-label {
+
+    margin-bottom: 18px;
+
+    color: var(--cyan);
+}
+
+.journey-section h2 {
+
+    max-width: 780px;
+
+    margin-bottom: 22px;
+
+    font-size: clamp(
+        2.5rem,
+        5vw,
+        4.5rem
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+}
+
+.journey-intro {
+
+    max-width: 680px;
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   JOURNEY TIMELINE
+========================================= */
+
+.journey-timeline {
+
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   JOURNEY ITEM
+========================================= */
+
+.journey-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    column-gap: 30px;
+
+    min-height: 190px;
+
+    padding-bottom: 45px;
+}
+
+
+/* =========================================
+   JOURNEY MARKER
+========================================= */
+
+.journey-marker {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid
+        rgba(103, 232, 249, 0.45);
+
+    border-radius: 50%;
+
+    background:
+        rgba(15, 23, 42, 0.95);
+
+    box-shadow:
+        0 0 0 8px
+            rgba(103, 232, 249, 0.04),
+        0 0 30px
+            rgba(103, 232, 249, 0.08);
+
+    color: var(--cyan);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.journey-item:hover .journey-marker {
+
+    transform: scale(1.08);
+
+    border-color:
+        rgba(103, 232, 249, 0.9);
+
+    box-shadow:
+        0 0 0 8px
+            rgba(103, 232, 249, 0.07),
+        0 0 35px
+            rgba(103, 232, 249, 0.22);
+}
+
+
+/* =========================================
+   JOURNEY VERTICAL LINE
+========================================= */
+
+.journey-line {
+
+    position: absolute;
+
+    top: 58px;
+    left: 29px;
+
+    width: 1px;
+
+    height: calc(100% - 35px);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(103, 232, 249, 0.55),
+            rgba(103, 232, 249, 0.08)
+        );
+}
+
+
+/* =========================================
+   JOURNEY CONTENT
+========================================= */
+
+.journey-content {
+
+    padding-top: 4px;
+}
+
+.journey-category {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--cyan);
+}
+
+.journey-content h3 {
+
+    margin-bottom: 12px;
+
+    font-size: clamp(
+        1.45rem,
+        3vw,
+        2rem
+    );
+
+    line-height: 1.25;
+
+    color: #ffffff;
+}
+
+.journey-content p {
+
+    max-width: 650px;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================
+   LAST JOURNEY ITEM
+========================================= */
+
+.journey-item-last {
+
+    min-height: auto;
+
+    padding-bottom: 0;
+}
+
+
+/* =========================================
+   JOURNEY FOOTER
+========================================= */
+
+.journey-footer {
+
+    max-width: 900px;
+
+    margin: 25px auto 0;
+
+    padding-left: 100px;
+}
+
+.journey-footer-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(103, 232, 249, 0.25),
+            transparent
+        );
+}
+
+
+/* =========================================
+   JOURNEY LINK
+========================================= */
+
+.journey-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 0;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    color: var(--cyan);
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+.journey-link strong {
+
+    font-size: 1.2rem;
+
+    font-weight: 400;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.journey-link:hover {
+
+    gap: 20px;
+
+    color: #ffffff;
+}
+
+.journey-link:hover strong {
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   JOURNEY — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .journey-header {
+
+        margin-bottom: 50px;
+    }
+
+
+    .journey-section h2 {
+
+        font-size: clamp(
+            2.25rem,
+            11vw,
+            3.2rem
+        );
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .journey-intro {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+
+    .journey-item {
+
+        grid-template-columns: 50px 1fr;
+
+        column-gap: 18px;
+
+        min-height: 185px;
+
+        padding-bottom: 40px;
+    }
+
+
+    .journey-marker {
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 0.65rem;
+    }
+
+
+    .journey-line {
+
+        top: 46px;
+
+        left: 23px;
+
+        height: calc(100% - 25px);
+    }
+
+
+    .journey-content {
+
+        padding-top: 2px;
+    }
+
+
+    .journey-category {
+
+        margin-bottom: 9px;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 1.7px;
+    }
+
+
+    .journey-content h3 {
+
+        margin-bottom: 9px;
+
+        font-size: 1.3rem;
+    }
+
+
+    .journey-content p {
+
+        font-size: 0.92rem;
+
+        line-height: 1.65;
+    }
+
+
+    .journey-footer {
+
+        margin-top: 25px;
+
+        padding-left: 68px;
+    }
+
+
+    .journey-footer-line {
+
+        margin-bottom: 22px;
+    }
+
+
+    .journey-link {
+
+        font-size: 0.65rem;
+
+        letter-spacing: 1.4px;
+    }
+
+}

@@ -1,0 +1,2196 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+
+/* =========================================
+   HERO
+   DARK
+========================================= */
+
+.about-hero {
+
+    position: relative;
+
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(34, 211, 238, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(96, 165, 250, 0.45),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #172554 0%,
+            #1e3a8a 48%,
+            #0891b2 100%
+        );
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   HERO GRID
+========================================= */
+
+.about-hero-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+
+}
+
+
+/* =========================================
+   HERO ORBIT
+========================================= */
+
+.about-hero-orbit {
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    right: -160px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================================
+   ORBIT RINGS
+========================================= */
+
+.orbit-ring {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+.orbit-ring-1 {
+
+    animation:
+        orbitRotate 22s linear infinite;
+
+}
+
+
+.orbit-ring-2 {
+
+    width: 72%;
+
+    height: 72%;
+
+    border-color:
+        rgba(103,232,249,0.22);
+
+    animation:
+        orbitRotateReverse 16s linear infinite;
+
+}
+
+
+.orbit-ring-3 {
+
+    width: 45%;
+
+    height: 45%;
+
+    border-color:
+        rgba(255,255,255,0.08);
+
+    animation:
+        orbitRotate 12s linear infinite;
+
+}
+
+
+/* =========================================
+   ORBIT DOTS
+========================================= */
+
+.orbit-dot {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #67e8f9;
+
+    box-shadow:
+        0 0 20px rgba(103,232,249,0.85);
+
+}
+
+
+.orbit-dot-1 {
+
+    top: 9%;
+
+    left: 48%;
+
+}
+
+
+.orbit-dot-2 {
+
+    bottom: 17%;
+
+    right: 9%;
+
+    width: 6px;
+
+    height: 6px;
+
+}
+
+
+.orbit-dot-3 {
+
+    top: 64%;
+
+    left: 6%;
+
+    width: 5px;
+
+    height: 5px;
+
+}
+
+
+/* =========================================
+   ORBIT ANIMATION
+========================================= */
+
+@keyframes orbitRotate {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes orbitRotateReverse {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.about-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    padding: 150px 0 120px;
+
+}
+
+
+.about-label {
+
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    color: #67e8f9;
+
+}
+
+
+.about-hero h1 {
+
+    margin: 0 0 35px;
+
+    font-size:
+        clamp(
+            4.5rem,
+            11vw,
+            9rem
+        );
+
+    line-height: 0.88;
+
+    letter-spacing: -6px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+}
+
+
+.about-hero-intro {
+
+    max-width: 700px;
+
+    margin-bottom: 35px;
+
+    font-size:
+        clamp(
+            1.1rem,
+            2vw,
+            1.35rem
+        );
+
+    line-height: 1.8;
+
+    color: #dbeafe;
+
+}
+
+
+.about-hero-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.about-hero-meta span {
+
+    padding: 8px 14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: #dbeafe;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+/* =========================================
+   HERO ENTRANCE
+========================================= */
+
+.hero-reveal {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    animation:
+        heroReveal 0.9s ease forwards;
+
+}
+
+
+.hero-reveal:nth-child(1) {
+
+    animation-delay: 0.1s;
+
+}
+
+
+.hero-reveal:nth-child(2) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.hero-reveal:nth-child(3) {
+
+    animation-delay: 0.35s;
+
+}
+
+
+.hero-reveal:nth-child(4) {
+
+    animation-delay: 0.5s;
+
+}
+
+
+@keyframes heroReveal {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.about-scroll-indicator {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    z-index: 3;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 0.62rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.about-scroll-line {
+
+    position: relative;
+
+    width: 1px;
+
+    height: 45px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.18);
+
+}
+
+
+.about-scroll-line span {
+
+    position: absolute;
+
+    top: -100%;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 50%;
+
+    background: #67e8f9;
+
+    animation:
+        scrollLine 1.8s ease-in-out infinite;
+
+}
+
+
+@keyframes scrollLine {
+
+    0% {
+
+        top: -100%;
+
+    }
+
+    50% {
+
+        top: 100%;
+
+    }
+
+    100% {
+
+        top: 100%;
+
+    }
+
+}
+
+
+/* =========================================
+   SHARED HEADINGS
+========================================= */
+
+.about-section-label {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+}
+
+
+.about-heading {
+
+    max-width: 850px;
+
+    margin-bottom: 75px;
+
+}
+
+
+.about-heading h2 {
+
+    margin:
+        0 0 25px;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5.5rem
+        );
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    color: var(--navy);
+
+}
+
+
+.about-heading > p {
+
+    max-width: 650px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+.reveal.is-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================
+   01 — WHO I AM
+   LIGHT
+========================================= */
+
+.about-intro-section {
+
+    padding: 150px 0;
+
+    background:
+        #ffffff;
+
+}
+
+
+.about-section-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.8fr)
+        minmax(0, 1.2fr);
+
+    gap: 100px;
+
+    align-items: start;
+
+}
+
+
+.about-section-heading h2 {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5rem
+        );
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    color: var(--navy);
+
+}
+
+
+.about-section-text {
+
+    max-width: 700px;
+
+}
+
+
+.about-section-text p {
+
+    margin-bottom: 28px;
+
+    font-size: 1.08rem;
+
+    line-height: 1.9;
+
+    color: var(--text-secondary);
+
+}
+
+
+.about-section-text p:last-of-type {
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================================
+   MINDSET
+========================================= */
+
+.about-intro-highlight {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 25px 0;
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.about-intro-highlight span {
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+}
+
+
+.about-intro-highlight strong {
+
+    font-size: 1.15rem;
+
+    color: var(--navy);
+
+}
+
+
+/* =========================================
+   02 — JOURNEY
+   DARK
+========================================= */
+
+.about-journey-section {
+
+    padding: 150px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #172554 55%,
+            #1e3a8a 100%
+        );
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   JOURNEY HEADING
+========================================= */
+
+.about-journey-section
+.about-section-label {
+
+    color: #67e8f9;
+
+}
+
+
+.about-journey-section
+.about-heading h2 {
+
+    color: #ffffff;
+
+}
+
+
+.about-journey-section
+.about-heading > p {
+
+    color: #bfdbfe;
+
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.about-timeline {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+
+.about-timeline-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        100px 1fr;
+
+    gap: 35px;
+
+    padding: 45px 0;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    transition:
+        padding-left 0.4s ease;
+
+}
+
+
+.about-timeline-item:last-child {
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.12);
+
+}
+
+
+.about-timeline-marker {
+
+    position: relative;
+
+}
+
+
+.about-timeline-number {
+
+    display: block;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #67e8f9;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.timeline-marker-line {
+
+    position: absolute;
+
+    top: 27px;
+
+    left: 3px;
+
+    width: 1px;
+
+    height:
+        calc(100% + 45px);
+
+    background:
+        rgba(255,255,255,0.12);
+
+}
+
+
+.about-timeline-item:last-child
+.timeline-marker-line {
+
+    display: none;
+
+}
+
+
+.about-timeline-content {
+
+    position: relative;
+
+}
+
+
+.timeline-category {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    color: #67e8f9;
+
+}
+
+
+.about-timeline-content h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 1.8rem;
+
+    color: #ffffff;
+
+}
+
+
+.about-timeline-content p {
+
+    max-width: 650px;
+
+    margin-bottom: 20px;
+
+    font-size: 0.98rem;
+
+    line-height: 1.8;
+
+    color: #bfdbfe;
+
+}
+
+
+.timeline-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.timeline-tags span {
+
+    padding: 6px 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    color: #dbeafe;
+
+}
+
+
+/* =========================================
+   TIMELINE ACTIVE
+========================================= */
+
+.about-timeline-item.timeline-active {
+
+    padding-left: 15px;
+
+}
+
+
+.about-timeline-item.timeline-active
+.about-timeline-number {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+.about-timeline-item.timeline-active::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: -1px;
+
+    width: 2px;
+
+    background:
+        #67e8f9;
+
+}
+
+
+/* =========================================
+   03 — INTERESTS
+   LIGHT
+========================================= */
+
+.about-interests-section {
+
+    padding: 150px 0;
+
+    background:
+        #f8fafc;
+
+}
+
+
+/* =========================================
+   INTEREST HEADING
+========================================= */
+
+.about-interests-section
+.about-section-label {
+
+    color:
+        var(--primary);
+
+}
+
+
+.about-interest-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+.about-interest-card {
+
+    position: relative;
+
+    min-height: 330px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 35px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 20px;
+
+    background:
+        #ffffff;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    transform-style: preserve-3d;
+
+}
+
+
+.about-interest-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(37,99,235,0.3);
+
+    box-shadow:
+        0 25px 60px
+        rgba(15,23,42,0.1);
+
+}
+
+
+.interest-card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.about-interest-number {
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: var(--primary);
+
+}
+
+
+.interest-card-arrow {
+
+    font-size: 1.2rem;
+
+    color: var(--text-muted);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.about-interest-card:hover
+.interest-card-arrow {
+
+    transform:
+        translate(4px, -4px);
+
+}
+
+
+.interest-card-category {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    color: var(--primary);
+
+}
+
+
+.about-interest-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 1.7rem;
+
+    color: var(--navy);
+
+}
+
+
+.about-interest-card p {
+
+    max-width: 500px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+
+    color: var(--text-secondary);
+
+}
+
+
+.interest-card-line {
+
+    width: 0;
+
+    height: 2px;
+
+    background:
+        var(--primary);
+
+    transition:
+        width 0.45s ease;
+
+}
+
+
+.about-interest-card:hover
+.interest-card-line {
+
+    width: 100%;
+
+}
+
+
+/* =========================================
+   04 — HOW I THINK
+   LIGHT / BLUE-WHITE
+========================================= */
+
+.about-thinking-section {
+
+    padding: 150px 0;
+
+    background:
+        #eff6ff;
+
+}
+
+
+.thinking-heading {
+
+    margin-bottom: 70px;
+
+}
+
+
+.thinking-flow {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 60px;
+
+}
+
+
+.thinking-step {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 125px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        #bfdbfe;
+
+    border-radius: 14px;
+
+    background:
+        #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.thinking-step:hover {
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+.thinking-step.active {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 15px 40px
+        rgba(37,99,235,0.1);
+
+}
+
+
+.thinking-step span {
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: var(--primary);
+
+}
+
+
+.thinking-step strong {
+
+    font-size: 1rem;
+
+    color: var(--navy);
+
+}
+
+
+.thinking-arrow {
+
+    font-size: 1.2rem;
+
+    color: var(--text-muted);
+
+}
+
+
+.thinking-display {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        100px 1fr;
+
+    gap: 35px;
+
+    padding: 45px;
+
+    border:
+        1px solid
+        #bfdbfe;
+
+    border-radius: 20px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 20px 50px
+        rgba(15,23,42,0.05);
+
+}
+
+
+.thinking-display-number {
+
+    font-size: 3rem;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    color:
+        rgba(37,99,235,0.18);
+
+}
+
+
+.thinking-display-content span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+}
+
+
+.thinking-display-content h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+
+    color: var(--navy);
+
+}
+
+
+.thinking-display-content p {
+
+    max-width: 600px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+
+}
+
+
+/* =========================================
+   05 — RIGHT NOW
+   DARK
+========================================= */
+
+.about-focus-section {
+
+    padding: 150px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #172554 50%,
+            #1e3a8a 100%
+        );
+
+    color: #ffffff;
+
+}
+
+
+.focus-heading {
+
+    max-width: 900px;
+
+}
+
+
+.about-focus-section
+.about-section-label {
+
+    color:
+        #67e8f9;
+
+}
+
+
+.about-focus-section
+.about-heading h2 {
+
+    color:
+        #ffffff;
+
+}
+
+
+.about-focus-section
+.about-heading > p {
+
+    color:
+        #bfdbfe;
+
+}
+
+
+/* =========================================
+   FOCUS DASHBOARD
+========================================= */
+
+.focus-dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+
+.focus-card {
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+
+}
+
+
+.focus-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-color:
+        rgba(103,232,249,0.25);
+
+}
+
+
+.focus-card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.focus-card-header > span:first-child {
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color:
+        #67e8f9;
+
+}
+
+
+.focus-card-status {
+
+    padding: 5px 9px;
+
+    border:
+        1px solid
+        rgba(103,232,249,0.25);
+
+    border-radius: 999px;
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color:
+        #dbeafe;
+
+}
+
+
+.focus-card h3 {
+
+    margin-bottom: 30px;
+
+    font-size: 1.7rem;
+
+    color:
+        #ffffff;
+
+}
+
+
+.focus-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+.focus-list div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+.focus-list span {
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    color:
+        #67e8f9;
+
+}
+
+
+.focus-list strong {
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    color:
+        #dbeafe;
+
+}
+
+
+.about-focus-tags {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 45px;
+
+}
+
+
+.about-focus-tags span {
+
+    padding: 9px 15px;
+
+    border:
+        1px solid
+        rgba(103,232,249,0.25);
+
+    border-radius: 999px;
+
+    background:
+        rgba(103,232,249,0.08);
+
+    color:
+        #dbeafe;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   06 — CLOSING
+   LIGHT
+========================================= */
+
+.about-closing-section {
+
+    padding: 170px 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(37,99,235,0.08),
+            transparent 35%
+        ),
+        #ffffff;
+
+}
+
+
+.about-closing {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+.about-closing h2 {
+
+    margin-bottom: 30px;
+
+    font-size:
+        clamp(
+            3.2rem,
+            7vw,
+            6rem
+        );
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    color:
+        var(--navy);
+
+}
+
+
+.about-closing > p {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.closing-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 55px;
+
+}
+
+
+.closing-line span:not(:nth-child(2)) {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        var(--border);
+
+}
+
+
+.closing-line span:nth-child(2) {
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.about-footer {
+
+    padding: 30px 0;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    background:
+        #ffffff;
+
+}
+
+
+.about-footer .section-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.about-footer p {
+
+    margin: 0;
+
+    font-size: 0.75rem;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.about-footer a {
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color:
+        var(--text-secondary);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.about-footer a:hover {
+
+    color:
+        var(--primary);
+
+}
+
+
+/* =========================================
+   TABLET — 900PX
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-section-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .about-interest-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .focus-dashboard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .thinking-flow {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .thinking-arrow {
+
+        display: none;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET — 768PX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+
+        min-height:
+            calc(100vh - 65px);
+
+    }
+
+
+    .about-hero-content {
+
+        padding:
+            130px 0 90px;
+
+    }
+
+
+    .about-intro-section,
+    .about-journey-section,
+    .about-interests-section,
+    .about-thinking-section {
+
+        padding:
+            110px 0;
+
+    }
+
+
+    .about-focus-section {
+
+        padding:
+            110px 0;
+
+    }
+
+
+    .about-closing-section {
+
+        padding:
+            120px 0;
+
+    }
+
+
+    .thinking-display {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE — 650PX
+========================================= */
+
+@media (max-width: 650px) {
+
+    .about-hero-orbit {
+
+        width: 350px;
+
+        height: 350px;
+
+        right: -200px;
+
+        top: 25%;
+
+        opacity: 0.25;
+
+    }
+
+
+    .about-hero-content {
+
+        padding:
+            120px 0 100px;
+
+    }
+
+
+    .about-hero h1 {
+
+        font-size:
+            clamp(
+                3.8rem,
+                18vw,
+                6rem
+            );
+
+        letter-spacing: -4px;
+
+    }
+
+
+    .about-hero-intro {
+
+        font-size: 1rem;
+
+        line-height: 1.75;
+
+    }
+
+
+    .about-hero-meta {
+
+        gap: 7px;
+
+    }
+
+
+    .about-hero-meta span {
+
+        font-size: 0.68rem;
+
+    }
+
+
+    .about-scroll-indicator {
+
+        bottom: 20px;
+
+    }
+
+
+    .about-intro-section,
+    .about-journey-section,
+    .about-interests-section,
+    .about-thinking-section {
+
+        padding:
+            90px 0;
+
+    }
+
+
+    .about-focus-section {
+
+        padding:
+            100px 0;
+
+    }
+
+
+    .about-closing-section {
+
+        padding:
+            100px 0;
+
+    }
+
+
+    .about-heading {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .about-heading h2,
+    .about-section-heading h2 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .about-timeline-item {
+
+        grid-template-columns:
+            45px 1fr;
+
+        gap: 18px;
+
+        padding:
+            30px 0;
+
+    }
+
+
+    .timeline-marker-line {
+
+        height:
+            calc(100% + 30px);
+
+    }
+
+
+    .about-timeline-content h3 {
+
+        font-size: 1.4rem;
+
+    }
+
+
+    .about-interest-card {
+
+        min-height: 300px;
+
+        padding: 28px;
+
+    }
+
+
+    .thinking-step {
+
+        flex:
+            1 1 calc(50% - 10px);
+
+        min-width: 0;
+
+    }
+
+
+    .thinking-display {
+
+        padding: 30px;
+
+    }
+
+
+    .thinking-display-content h3 {
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .focus-card {
+
+        min-height: auto;
+
+    }
+
+
+    .about-closing h2 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .about-footer
+    .section-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}

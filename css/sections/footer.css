@@ -1,0 +1,358 @@
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    position: relative;
+
+    padding: 75px 0 30px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(34, 211, 238, 0.07),
+            transparent 30%
+        ),
+        #020617;
+
+    border-top:
+        1px solid
+        rgba(103, 232, 249, 0.1);
+}
+
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+
+    width: min(
+        1100px,
+        90%
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   FOOTER MAIN
+========================================= */
+
+.footer-main {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr;
+
+    gap: 70px;
+
+    padding-bottom: 65px;
+}
+
+
+/* =========================================
+   FOOTER BRAND
+========================================= */
+
+.footer-logo {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 1.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+
+    transition:
+        color 0.2s ease;
+}
+
+.footer-logo:hover {
+
+    color: var(--cyan);
+}
+
+
+.footer-tagline {
+
+    margin-bottom: 18px;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    color: var(--cyan);
+}
+
+
+.footer-description {
+
+    max-width: 300px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   FOOTER HEADINGS
+========================================= */
+
+.footer-heading {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   FOOTER NAVIGATION
+========================================= */
+
+.footer-navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+.footer-navigation a {
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    color: #cbd5e1;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.footer-navigation a:hover {
+
+    color: #ffffff;
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================
+   FOOTER SOCIAL
+========================================= */
+
+.footer-social {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+.footer-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    color: #cbd5e1;
+
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+
+.footer-social a span {
+
+    font-size: 0.75rem;
+
+    color: var(--cyan);
+}
+
+
+.footer-social a:hover {
+
+    gap: 11px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   FOOTER DIVIDER
+========================================= */
+
+.footer-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.1),
+            transparent
+        );
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 25px;
+}
+
+
+.footer-bottom p {
+
+    font-size: 0.75rem;
+
+    color: #475569;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-to-top {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    color: #64748b;
+
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+
+.back-to-top span {
+
+    font-size: 1rem;
+
+    color: var(--cyan);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.back-to-top:hover {
+
+    gap: 13px;
+
+    color: #ffffff;
+}
+
+
+.back-to-top:hover span {
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .footer {
+
+        padding:
+            60px 0 25px;
+    }
+
+
+    .footer-main {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-bottom: 45px;
+    }
+
+
+    .footer-description {
+
+        max-width: 260px;
+    }
+
+
+    .footer-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}

@@ -1,0 +1,928 @@
+/* =========================================
+   NAVIGATION
+========================================= */
+
+html {
+    scroll-padding-top: 72px;
+}
+
+@media (max-width: 650px) {
+
+    html {
+        scroll-padding-top: 65px;
+    }
+
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(15, 23, 42, 0.92);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    width: min(1200px, 92%);
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+
+    transition: color 0.2s ease;
+}
+
+.logo:hover {
+    color: #67e8f9;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: #cbd5e1;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #67e8f9;
+
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(34, 211, 238, 0.55),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(59, 130, 246, 0.55),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #172554 42%,
+            #1e40af 72%,
+            #0891b2 100%
+        );
+}
+
+
+/* =========================================
+   HERO BACKGROUND
+========================================= */
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.hero-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.35;
+
+    animation:
+        heroGlow 10s ease-in-out infinite alternate;
+}
+
+.hero-glow-one {
+    top: -180px;
+    right: -120px;
+
+    background: #22d3ee;
+}
+
+.hero-glow-two {
+    bottom: -250px;
+    left: -150px;
+
+    background: #3b82f6;
+
+    animation-delay: -4s;
+}
+
+.hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.15) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.15) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            transparent 90%
+        );
+}
+
+@keyframes heroGlow {
+
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(30px, 25px, 0) scale(1.08);
+    }
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+
+    padding: 75px 0 85px;
+}
+
+
+/* =========================================
+   HERO INTRO
+========================================= */
+
+.hero-intro {
+    margin-bottom: 20px;
+}
+
+.hero-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 17px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(103, 232, 249, 0.25);
+
+    border-radius: 999px;
+
+    background: rgba(15, 23, 42, 0.25);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    color: #a5f3fc;
+}
+
+.hero-status-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #67e8f9;
+
+    box-shadow:
+        0 0 0 4px rgba(103, 232, 249, 0.12),
+        0 0 12px rgba(103, 232, 249, 0.8);
+
+    animation:
+        statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+
+}
+
+.hero-greeting {
+    margin: 0;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: #bae6fd;
+}
+
+
+/* =========================================
+   HERO NAME
+========================================= */
+
+.hero-name {
+    margin: 0 0 20px;
+
+    font-size: clamp(4.5rem, 10.5vw, 8.5rem);
+
+    line-height: 0.88;
+
+    letter-spacing: -6px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+.hero-name span {
+    color: #67e8f9;
+}
+
+
+/* =========================================
+   HERO ROLE
+========================================= */
+
+.hero-role {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+
+    font-weight: 600;
+
+    color: #dbeafe;
+}
+
+.hero-role-dot {
+    color: #67e8f9;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-description {
+    max-width: 680px;
+
+    margin-bottom: 30px;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: #e0f2fe;
+
+    text-shadow:
+        0 2px 10px rgba(15, 23, 42, 0.18);
+}
+
+.hero-description strong {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   HERO GOAL CARD
+========================================= */
+
+.hero-goal-card {
+    max-width: 680px;
+
+    margin-bottom: 32px;
+
+    padding: 22px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-left: 4px solid #67e8f9;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.55),
+            rgba(30, 41, 59, 0.3)
+        );
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 45px rgba(15, 23, 42, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hero-goal-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(103, 232, 249, 0.35);
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+.hero-goal-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 10px;
+}
+
+.hero-goal-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #67e8f9;
+}
+
+.hero-goal-number {
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-goal-card h2 {
+    margin-bottom: 8px;
+
+    font-size: clamp(1.4rem, 3vw, 2rem);
+
+    line-height: 1.2;
+
+    color: #ffffff;
+}
+
+.hero-goal-card h2 span {
+    color: #67e8f9;
+}
+
+.hero-goal-card p {
+    max-width: 600px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 40px;
+}
+
+.hero-buttons .button {
+    min-height: 52px;
+
+    padding: 0 24px;
+}
+
+.button-arrow {
+    margin-left: 8px;
+
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.primary-button:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   HERO SCROLL INDICATOR
+========================================= */
+
+.hero-scroll {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-scroll-line {
+    width: 50px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================
+   HERO FLOATING LABELS
+========================================= */
+
+.hero-floating {
+    position: absolute;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 8px;
+
+    background: rgba(15, 23, 42, 0.28);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.12);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 1.2px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    pointer-events: none;
+}
+
+.hero-floating span {
+    font-weight: 800;
+
+    color: #67e8f9;
+}
+
+.hero-floating strong {
+    font-size: 0.65rem;
+
+    color: #e0f2fe;
+}
+
+.hero-floating-one {
+    top: 24%;
+    right: 8%;
+
+    animation:
+        floatingOne 6s ease-in-out infinite;
+}
+
+.hero-floating-two {
+    top: 48%;
+    right: 4%;
+
+    animation:
+        floatingTwo 7s ease-in-out infinite;
+}
+
+.hero-floating-three {
+    bottom: 16%;
+    right: 11%;
+
+    animation:
+        floatingThree 8s ease-in-out infinite;
+}
+
+@keyframes floatingOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes floatingTwo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+}
+
+@keyframes floatingThree {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================================
+   HERO — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-floating {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 65px 0 75px;
+    }
+
+}
+
+
+/* =========================================
+   HERO — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .hero {
+        min-height: calc(100vh - 65px);
+
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        padding: 28px 0 60px;
+    }
+
+    .hero-intro {
+        margin-bottom: 17px;
+    }
+
+    .hero-status {
+        margin-bottom: 14px;
+
+        font-size: 0.58rem;
+    }
+
+    .hero-greeting {
+        font-size: 1rem;
+    }
+
+    .hero-name {
+        margin-bottom: 17px;
+
+        font-size: clamp(3.5rem, 18vw, 5rem);
+
+        letter-spacing: -3px;
+
+        line-height: 0.9;
+    }
+
+    .hero-role {
+        flex-wrap: wrap;
+
+        gap: 7px;
+
+        margin-bottom: 24px;
+
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        margin-bottom: 26px;
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+    .hero-goal-card {
+        margin-bottom: 28px;
+
+        padding: 18px;
+    }
+
+    .hero-goal-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .hero-goal-card p {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+}
+
+
+/* =========================================
+   HERO — INTERACTION LAYER
+========================================= */
+
+.hero-reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+    transition-delay: var(--hero-delay);
+}
+
+.hero-loaded .hero-reveal {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   HERO CURSOR GLOW
+========================================= */
+
+.hero-cursor-glow {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(103, 232, 249, 0.16),
+            rgba(59, 130, 246, 0.08) 35%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    transition:
+        opacity 0.3s ease;
+
+    z-index: 1;
+}
+
+.hero-cursor-glow.visible {
+    opacity: 1;
+}
+
+
+/* =========================================
+   HERO FLOATING LABEL PARALLAX
+========================================= */
+
+.hero-floating {
+    transform:
+        translate3d(
+            var(--mouse-x, 0px),
+            var(--mouse-y, 0px),
+            0
+        );
+}
+
+
+/* =========================================
+   NAVIGATION — SCROLL STATE
+========================================= */
+
+.navbar {
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background:
+        rgba(15, 23, 42, 0.97);
+
+    border-bottom-color:
+        rgba(103, 232, 249, 0.16);
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.2);
+}
+
+
+/* =========================================
+   NAVIGATION — ACTIVE LINK
+========================================= */
+
+.nav-links a.active {
+    color: #ffffff;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   MOBILE NAV — ACTIVE LINK
+========================================= */
+
+.mobile-nav a.active {
+    color: #ffffff;
+
+    background:
+        rgba(103, 232, 249, 0.08);
+
+    border-left:
+        2px solid #67e8f9;
+}
+
+
+/* =========================================
+   HERO REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .hero-glow,
+    .hero-status-dot,
+    .hero-floating {
+        animation: none;
+    }
+
+}
